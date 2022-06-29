@@ -43,3 +43,9 @@ class FormMensalista(ModelForm):
         model = Mensalista
         fields = '__all__'
 
+
+class FormPreco(ModelForm):
+    class Meta:
+        model = Preco
+        fields = '__all__'
+
