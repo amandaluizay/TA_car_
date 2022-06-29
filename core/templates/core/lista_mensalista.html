@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <a href="/">Voltar</a>
+    <h3>Lista de mensalistas</h3>
+
+    {% for i in dados %}
+        Cliente: {{i.id_cliente}}<br>
+        Valor: {{i.id_preco}}<br>
+        Vencimento: {{i.dia_vencimento}}<br>
+        {% if i.pendencia %}
+            Status do pagamento: <strong>Em aberto</strong><br>
+        {% else %}
+            Status do pagamento: <strong>Fechado</strong><br>
+        {% endif %}
+        Total: R$ {{i.total}}<br><br>
+
+        <a href="/altera_mensalista/{{i.id}}/">Editar</a>
+        <a href="/exclui_mensalista/{{i.id}}/">Excluir</a>
+        <br>
+        <br>
+        --------------------------------<br>
+        {% endfor %}
+    
+
+{% endblock main %}
+

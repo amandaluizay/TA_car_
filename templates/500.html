@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+   {% if msg_erro %}
+    erro: {{ mesg_erro }}
+   {% else %}
+       500
+   {% endif %}
+{% endblock %}

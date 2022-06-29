@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Logar</button>
+        <button type="button" onclick="location.href='/'">Cancelar</button>
+    </form>
+
+{% endblock main %}

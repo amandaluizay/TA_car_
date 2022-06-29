@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  lista de fabricantes <br>
+  {% for i in dados %}
+    <p> Fabricante: {{ i.descricao}} </p>
+
+    --------------------------------------------------------- <br>
+  {% endfor %}
+  <a href="/">Voltar</a>
+{% endblock %}

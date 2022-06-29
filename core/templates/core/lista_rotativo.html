@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h3>Lista de rotativos</h3>
+
+    {% for i in dados %}
+        <p>
+            Veiculo: {{i.id_veiculo}}<br>
+            Entrada: {{i.data_entrada}}<br>
+            
+            {% if i.data_saida and i.total %}
+                Saída: {{i.data_saida}}<br>
+                Total: {{i.total}} <br>
+            {% else %} 
+                Saida: --<br>
+                Total: --<br>
+            {% endif %}
+            Pago: {{i.pago}}<br><br>
+            <a href="/altera_rotativo/{{i.id}}/">Editar</a>
+            <!--<a href="/exclui_veiculo/{{i.id}}/">Excluir</a>-->
+            <br>
+            <br>
+            ----------------------------------<br>
+        </p>
+    {% endfor %}
+    <a href="/">Voltar</a>
+
+{% endblock main %}
+

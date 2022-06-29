@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <h3>Deseja excluir {{ objeto }}?</h3>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim</button> 
+        <button type="button" onclick="location.href='{{ url }}'">Não</button> 
+
+    </form>
+
+    <!--<h3>Dados de {{ objeto }} excluídos</h3>
+    <button type="button" onclick="location.href='{{ url }}'">OK</button>-->
+{% endblock main %}

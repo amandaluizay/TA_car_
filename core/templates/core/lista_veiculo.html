@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <h3>lista de veiculos</h3>
+    <br>
+
+    {% for i in dados %}
+        idCliente: {{i.id_cliente}}<br>
+        idFabricante: {{i.id_fabricante}}<br>
+        
+        {% if i.modelo %}
+            Modelo: {{i.modelo}}<br>
+        {% else %} Modelo: - <br>
+        {% endif %}
+        
+        {% if i.cor %}
+            Cor: {{i.cor}}<br>
+        {% else %}Cor: -<br>
+        {% endif %}
+        
+        Ano: {{i.ano}}<br>
+        Placa: {{i.placa}}<br>
+        
+        {% if i.foto %}
+            <img src="{{i.foto.url}}" width="200px"> <br>
+        {% else %} Não tem foto <br>
+        {% endif %}
+
+        <a href="/altera_veiculo/{{i.id}}/">Editar</a>
+        <a href="/exclui_veiculo/{{i.id}}/">Excluir</a>
+        <br>
+        <br>
+        ------------------------------------------------<br>
+    {% endfor %}
+    <a href="/">Voltar</a>
+
+{% endblock main %}

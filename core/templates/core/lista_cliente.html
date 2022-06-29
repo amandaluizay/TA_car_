@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+ {% for msg in messages %}
+  <div class="alert alert-sucess alert-dismissible">
+  {{ msg }}
+      <button class="close" data-dismiss="alert" >&times;</button>
+  </div>
+{% endfor %}
+
+
+    <h3>Lista de cliente</h3>
+    <br>
+<font color="black"
+<ul class="list-group list-group-horizontal"  >
+    {% for i in dados %}
+    <li class="list-group-item">
+        Nome: {{i.nome}} <br>
+        
+        {% if i.endereco %}
+            Endereço: {{i.endereco}} <br>
+        {% endif %}
+        
+        {% if i.complemtento %}
+            Complemento: {{i.complemento}} <br>
+        {% else %}Complemento: - <br>
+        {% endif %}
+        
+        {% if i.bairro %}
+            Bairro: {{i.bairro}} <br>
+        {% else %}Bairro: - <br>
+        {% endif %}
+        
+        {% if i.cidade %}
+            Cidade: {{i.cidade}} <br>
+        {% else %}Cidade: - <br>
+        {% endif %}
+        
+        {% if i.cep %}
+            CEP: {{i.cep}} <br>
+        {% else %}CEP: - <br>
+        {% endif %}
+        
+        Email: {{i.email}} <br>
+
+        {% if i.telefone %}
+            Telefone: {{i.telefone}} <br>
+        {% else %}Telefone: - <br>
+        {% endif %}
+
+        {% if i.foto %}
+            <img src="{{i.foto.url}}" width="200px"> <br>
+        {% else %} Não tem foto <br>
+        {% endif %}
+
+        <a href="/altera_cliente/{{i.id}}/"><i class="fa fa-edit" style="color: green"></i> Editar</a> &nbsp; &nbsp;
+        <a href="/exclui_cliente/{{ i.id }}"><i class="fa fa-trash" style="color: red"></i> Excluir</a>
+        <br>
+        <br>,
+        ------------------------------------------------<br>
+        </li>
+    {% endfor %}
+        </ul>
+     </font>
+    <a href="/">Voltar</a>
+
+{% endblock main %}
