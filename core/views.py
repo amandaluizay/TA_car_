@@ -130,6 +130,7 @@ def lista_fabricante(request):
 
 
 # Preços
+
 def cadastro_preco(request):
     form = FormPreco(request.POST or None, request.FILES or None)
     if form.is_valid():
