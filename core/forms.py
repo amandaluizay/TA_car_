@@ -49,3 +49,8 @@ class FormPreco(ModelForm):
         model = Preco
         fields = '__all__'
 
+
+class FormPagamento(ModelForm):
+    class Meta:
+        model = Forma_Pagamento
+        fields = '__all__'

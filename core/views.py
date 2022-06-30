@@ -135,10 +135,18 @@ def cadastro_preco(request):
     form = FormPreco(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
-        return redirect('url_principal')
+        return redirect('url_tabela_preco')
     contexto = {'form': form, 'Descrição': 'Valor', 'stringBotao': 'Cadastrar'}
     return render(request, 'core/cadastro.html', contexto)
 
+
+def cadastro_pagamento(request):
+    form = FormPagamento(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        return redirect('url_principal')
+    contexto = {'form': form, 'título': 'Cadastro Forma de pagamento ', 'stringBotao': 'Cadastrar'}
+    return render(request, 'core/cadastro.html', contexto)
 
 def tabela_preco(request):
     dados = Preco.objects.all()

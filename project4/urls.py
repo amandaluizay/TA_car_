@@ -30,6 +30,7 @@ urlpatterns = [
     # Tabela de preços
     path('tabela_preco/', tabela_preco, name='url_tabela_preco'),
     path('cadastro_preco/', cadastro_preco, name='url_cadastro_preco'),
+    path('cadastro_pagamento/', cadastro_pagamento, name='url_cadastro_pagamento'),
 
     # Rotativo
     path('cadastro_rotativo/', cadastro_rotativo, name="url_cadstro_rotativo"),
