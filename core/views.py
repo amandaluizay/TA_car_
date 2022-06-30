@@ -120,13 +120,13 @@ def cadastro_fabricante(request):
     return render(request, 'core/cadastro.html', contexto)
 
 
-def lista_fabricante(request):
+def lista_fabricantes(request):
     dados = Fabricante.objects.all()
     if request.POST:
         if request.POST['pesquisa']:
             dados = Fabricante.objects.filter(descricao=request.POST['pesquisa'])
     contexto = {'dados': dados}
-    return render(request, 'core/lista_fabricante.html', contexto)
+    return render(request, 'core/lista_fabricantes.html', contexto)
 
 
 # Preços

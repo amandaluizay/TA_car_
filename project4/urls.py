@@ -25,7 +25,7 @@ urlpatterns = [
 
     # Fabricantes
     path('cadastro_fabricantes/', cadastro_fabricante),
-    path('lista_fabricantes/', lista_fabricante),
+    path('lista_fabricantes/', lista_fabricantes, name='url_lista_fabricantes'),
 
     # Tabela de preços
     path('tabela_preco/', tabela_preco, name='url_tabela_preco'),
